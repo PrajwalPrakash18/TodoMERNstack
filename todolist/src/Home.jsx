@@ -13,7 +13,7 @@ function Home() {
     }, []);
 
     const handleEdit = (id) => {
-        axios.put(`http://localhost:3000/update/${id}`)
+        axios.put(`http://localhost:3000/update/`+id)
             .then(result => {
                 location.reload();
             })
@@ -21,7 +21,7 @@ function Home() {
     };
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:3000/delete/${id}`)
+        axios.delete(`http://localhost:3000/delete/`+id)
             .then(result => {
                 location.reload();
             })
