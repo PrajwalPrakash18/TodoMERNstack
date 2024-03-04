@@ -17,7 +17,7 @@ app.get('/get' , (req,res) =>{
       .catch(err => res.json(err))
 })
 
-app.update('/update/:id' , (req,res) => {
+app.put('/update/:id' , (req,res) => {
       const {id} = req.params;
       todo.findByIdAndUpdate({_id : id} , {done : true})
       .then(result => rmSync.json(result))
@@ -43,4 +43,5 @@ app.delete('/delete/:id' , (req,res) => {
 
 app.listen(3001 , () => {
       console.log("Server is running !!")
+      console.log("mongoose connected")
 })
